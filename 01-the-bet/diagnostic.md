@@ -3,7 +3,7 @@
 ## Product
 <!-- Name the product you're diagnosing. Real product at your company — not a hypothetical. -->
 
-**Product:** Governor — Conversation Simulation, Red-Teaming & Compliance Monitoring Platform for Engineered Arts Desktop Robot Series
+**Product:** Governor — AI compliance oracle for Engineered Arts humanoid robots in public-facing roles. Three modes: (1) Live monitoring — streams real guest conversations and flags compliance risks in real time; (2) Simulate — operator types as a guest to QA, regression-test, or probe edge cases before going live; (3) Audit — upload a past transcript for batch compliance analysis and downloadable compliance records. Deployed in hotels, hospitals, museums, retail, and corporate front-of-house.
 **Your Role:** Product Strategist
 
 ---
@@ -13,7 +13,7 @@
 ### Contextual Moat — 4/5
 *Workflow depth × switching cost. Would users leave in a weekend if a competitor showed up?*
 
-**Score rationale:** The product embeds deeply into the customer's robot deployment workflow — pre-deployment red-teaming, live compliance monitoring, and post-hoc conversation analysis all become operational dependencies. Switching cost is high once a customer's compliance process is built around this tooling. The moat is reinforced by true behavioural parity with the physical robot: only Engineered Arts can achieve this, as it requires direct access to the robot's embodied AI stack, character engine, and sensor modalities. A third-party competitor cannot replicate parity without the hardware relationship.
+**Score rationale:** Governor embeds into three distinct points in the deployment workflow — pre-launch QA (Simulate), live operations (Listen), and periodic compliance records (Audit). Each mode creates its own dependency: the Simulate mode becomes the regression test harness for every prompt change; the Listen mode becomes the operational dashboard the manager checks daily; the Audit mode produces the downloadable compliance records that go into the customer's legal files. Once those compliance records exist, switching tools means re-auditing everything from scratch. Switching cost is high and compounds over time. The moat is further reinforced by true behavioural parity with the physical robot and the plain-English scenario configurability — the robot's job description lives in Governor, not in a separate system.
 
 **Named attacker:** A well-funded HRI (Human-Robot Interaction) startup building a generic robot testing layer across multiple hardware vendors — shallow parity but broad distribution.
 

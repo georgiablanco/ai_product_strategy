@@ -8,21 +8,21 @@
 | Loop | What It Measures | Score 1 | Score 5 | Score |
 |------|------------------|---------|---------|-------|
 | **Correction** | Do users fix AI outputs? Is that signal captured and reused? | No capture | Automated retraining | 3/5 |
-| **Preference** | Does the product learn individual / team preferences over time? | Stateless | Deep personalization | 2/5 |
+| **Preference** | Does the product learn individual / team preferences over time? | Stateless | Deep personalization | 3/5 |
 | **Domain Context** | Does usage in one area improve quality in adjacent areas? | Siloed | Cross-domain transfer | 3/5 |
 | **Network** | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | 2/5 |
 
 ### Correction Loop — 3/5
-**What you capture today:** Every compliance flag Governor surfaces is either acted on or ignored by the operator. When a deployment manager dismisses a flag as a false positive, or escalates one as a real risk, that judgement is a correction signal. The eight compliance categories (LEGAL, MEDICAL, FIN, PII, HALLUC, TONE, BIAS, SAFETY) give the signal structure — it's not a vague thumbs-up/down but a typed, categorised verdict.
+**What you capture today:** Every compliance flag Governor surfaces is either acted on or ignored by the operator. When a deployment manager dismisses a flag as a false positive, or escalates one as a real risk, that judgement is a correction signal. The eight compliance categories (LEGAL, MEDICAL, FIN, PII, HALLUC, TONE, BIAS, SAFETY) give the signal structure — it's not a vague thumbs-up/down but a typed, categorised verdict. Governor also surfaces a suggested rewrite for every flagged robot reply — when a manager accepts or modifies that suggestion, it is a high-quality correction signal: the exact problematic span, the category, and the preferred alternative are all captured in a single interaction.
 
-**How it compounds:** Each accepted and dismissed flag trains the compliance model to reduce false positives in that deployment context and catch genuine risks more reliably. Over time, Governor gets measurably more accurate for each customer's specific robot persona and deployment scenario — a hotel front desk model that has seen 10,000 flagged moments behaves very differently from a fresh install.
+**How it compounds:** Each accepted/dismissed flag and each acted-on suggested rewrite trains the compliance model to reduce false positives and catch genuine risks more reliably. Over time, Governor gets measurably more accurate for each customer's specific deployment scenario — a hotel front desk model that has seen 10,000 flagged moments and 2,000 accepted rewrites behaves very differently from a fresh install.
 
 ---
 
-### Preference Loop — 2/5
-**What you capture today:** Governor currently captures deployment context (e.g. HOTEL FRONT DESK) and robot identity (Ameca-FD-04) per session. That's a starting point for contextual personalisation, but the system is currently stateless between sessions — compliance thresholds don't yet adapt to what a specific operator has historically tolerated or prioritised.
+### Preference Loop — 3/5
+**What you capture today:** Governor captures a richer preference signal than previously assessed. The scenario system — where operators write a plain-English brief describing the robot's job, venue, and rules, and Governor uses the AI to turn it into a system prompt — is a direct preference capture mechanism. Each time an operator edits, refines, or switches a scenario, they are expressing a preference about what their robot should and should not do. These scenario edits accumulate as a per-customer configuration history. Presets for common deployments (hotel, hospital, museum) provide a starting point; custom scenarios encode organisation-specific rules that no generic tool would know.
 
-**How it compounds:** As operators run more sessions, Governor should learn their specific compliance profile: a K-12 school cares deeply about SAFETY and BIAS but has low FIN/LEGAL exposure; a corporate law firm has the inverse. Deep preference learning means each returning customer gets a Governor that is pre-calibrated to their context rather than starting from generic defaults — increasing retention and switching cost significantly. **This is the loop most in need of deliberate investment.**
+**How it compounds:** As scenario history grows, Governor can begin to anticipate compliance risk before it happens — a new hotel customer's scenario brief shares structural characteristics with hundreds of past hotel scenarios, so Governor can pre-populate likely risk categories and flag patterns the customer hasn't encountered yet. The scenario library also becomes a proprietary asset: a curated, battle-tested set of deployment configurations that improves with every new vertical added. Switching to a competitor means losing that configuration history and starting from generic defaults.
 
 ---
 
@@ -40,7 +40,7 @@
 
 ---
 
-**Total Flywheel Score: 10/20**
+**Total Flywheel Score: 11/20**
 **Weakest Loop:** Network (2/5) — no cross-customer learning is currently active, meaning the data advantage is accumulating but not yet compounding across the customer base.
 **Fix for weakest loop:** Build anonymised session contribution — operators opt in to share flagged moments (stripped of PII) into a shared compliance corpus. Even a small initial cohort of opted-in customers begins generating the network effect. Pair with a "Benchmark" feature showing operators how their robot's risk profile compares to anonymised industry peers — this creates pull for contribution.
 
