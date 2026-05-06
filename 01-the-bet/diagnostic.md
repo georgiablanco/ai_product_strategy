@@ -3,54 +3,44 @@
 ## Product
 <!-- Name the product you're diagnosing. Real product at your company — not a hypothetical. -->
 
-**Product:**
-**Your Role:**
+**Product:** Governor — Conversation Simulation, Red-Teaming & Compliance Monitoring Platform for Engineered Arts Desktop Robot Series
+**Your Role:** Product Strategist
 
 ---
 
 ## Scores
 
-### Contextual Moat — __/5
+### Contextual Moat — 4/5
 *Workflow depth × switching cost. Would users leave in a weekend if a competitor showed up?*
 
-**Score rationale:**
+**Score rationale:** The product embeds deeply into the customer's robot deployment workflow — pre-deployment red-teaming, live compliance monitoring, and post-hoc conversation analysis all become operational dependencies. Switching cost is high once a customer's compliance process is built around this tooling. The moat is reinforced by true behavioural parity with the physical robot: only Engineered Arts can achieve this, as it requires direct access to the robot's embodied AI stack, character engine, and sensor modalities. A third-party competitor cannot replicate parity without the hardware relationship.
 
-**Named attacker (from partner challenge):**
+**Named attacker:** A well-funded HRI (Human-Robot Interaction) startup building a generic robot testing layer across multiple hardware vendors — shallow parity but broad distribution.
 
 ---
 
-### Data Advantage — __/5
+### Data Advantage — 5/5
 *Proprietary signal that compounds with usage. What do you see that OpenAI doesn't?*
 
-**Score rationale:**
+**Score rationale:** Every simulated and live conversation generates a proprietary dataset of how humans interact with embodied generative AI in real deployment contexts — receptions, classrooms, museums, hospitality. This includes edge cases, adversarial inputs, compliance-triggering topics, and out-of-role requests. No one else has this data. It compounds: the more deployments monitored, the better the compliance models become at flagging risk, which improves the product, which attracts more customers. OpenAI has no access to embodied, physical-world HRI data at this specificity.
 
-**Named attacker (from partner challenge):**
+**Named attacker:** OpenAI — if they partner with a hardware vendor and begin accumulating their own embodied conversation dataset at scale.
 
 ---
 
-### Platform Exposure — __/5
+### Platform Exposure — 2/5
 *Encroachment risk × pivot speed. If Apple/Google/OpenAI ships your hero feature native — then what?*
 
-**Score rationale:**
+**Score rationale:** The generic "AI conversation analytics" space is crowded and platform players could ship a surface-level version. However, the core defensive position is strong: true behavioural parity with the Engineered Arts robot is not replicable without owning the hardware and AI stack. The risk is not encroachment on the simulation layer but commoditisation of the compliance/monitoring layer if LLM providers build generic guardrail tooling (e.g. OpenAI's moderation API improving dramatically). Pivot speed is medium — the hardware integration is a meaningful barrier to fast imitation.
 
-**Named attacker (from partner challenge):**
+**Named attacker (compliance layer):** Anthropic or OpenAI shipping native compliance/guardrail tooling that enterprise customers layer on top of any AI system, reducing the perceived need for robot-specific monitoring.
 
----
-
-## Killer Memo
-
-> You run AI at **[OpenAI / Google / Apple]**. Your OKR: make this product irrelevant.
->
-> **3-sentence memo:**
->
-> 1. Attack:
-> 2. Wedge:
-> 3. Why users switch:
+**Named attacker (simulation layer):** ElevenLabs — their voice agent platform allows customers to rapidly prototype conversational AI personas with high-quality voice synthesis. For customers who undervalue the embodied layer and treat the robot as "just a voice agent with a face," a cheap ElevenLabs voice agent feels like a sufficient substitute for pre-deployment simulation testing. ElevenLabs cannot monitor live deployed robots or achieve embodied behavioural parity, but the perception risk is real. Defence: make the embodied difference empirically visible — surface cases where voice-only simulation gave a clean result but embodied simulation flagged a compliance risk.
 
 ---
 
 ## Top Vulnerability
-<!-- One line: what's the single biggest strategic risk? -->
+Generic LLM guardrail tooling from foundation model providers commoditising the compliance monitoring layer — the defence must be that embodied, physical-world HRI creates qualitatively different risk that robot-specific data is uniquely positioned to catch.
 
 ## Confidence Level
-<!-- H / M / L — how confident are you in this bet after the diagnostic? -->
+H — genuine product gap confirmed within existing customer base, hardware moat is real, and compliance pain is urgent and recurring for both primary ICPs.
