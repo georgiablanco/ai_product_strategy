@@ -10,7 +10,7 @@ Claude
 
 ## Prototype Link
 
-
+ai_product_strategy/01-the-bet/Governor _standalone_.html
 
 ## AI Value Archetype
 
